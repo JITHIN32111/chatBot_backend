@@ -13,7 +13,7 @@ import swaggerDocument from "./src/utils/swagger.json" assert { type: 'json' };
 
 const app = express();
 const server = http.createServer(app);
-
+const PORT=process.env.PORT|| 5000
 const io = new socketIO(server, {
   cors: {
     origin: "http://127.0.0.1:5173",
@@ -39,8 +39,8 @@ handleSocketConnection(io)
 app.use("/api/user",routes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-server.listen(process.env.PORT, () => {
-  console.log(`Server running on ${process.env.PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
 
 
