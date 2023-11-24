@@ -1,0 +1,30 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "INTERVIEW TASK",
+      "version": "1.0.0",
+      "description":
+      "This is a simple CRUD API application made with Express and documented with Swagger"
+    },
+ 
+    "paths": {
+      "/api/user/getData": {
+        "get": {
+          "summary": "Get Account Details",
+          "description": "Getting All Account Details.",
+          "responses": {
+            "200": {
+              "description": "Login Successful"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    }
+  }
+  
