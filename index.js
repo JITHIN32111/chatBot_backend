@@ -38,9 +38,7 @@ app.use(urlencoded({ extended: true }));
 dbConnection();
 handleSocketConnection(io)
 const BASE_URL = 'https://chatbotbackend-zsp1.onrender.com';
-app.use("/user", async (req, res) => {
-  res.send('Hello from /user');
-});
+app.use("/user",routes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 server.listen(PORT, () => {
