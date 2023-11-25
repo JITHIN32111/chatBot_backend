@@ -17,13 +17,13 @@ const server = http.createServer(app);
 const PORT=process.env.PORT|| 5000
 const io = new socketIO(server, {
   cors: {
-    origin: "https://chatbot-n45g.onrender.com",
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
 const corsOptions = {
-  origin: "https://chatbot-n45g.onrender.com",
+  origin: "https://chatbot-s8ht.onrender.com",
   methods: ["GET", "POST"],
   credentials: true,
 };
