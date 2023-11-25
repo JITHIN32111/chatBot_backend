@@ -36,7 +36,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 dbConnection();
 handleSocketConnection(io)
-app.use("https://chatappweb-cvej.onrender.com//user",routes);
+app.use("/https://chatappweb-cvej.onrender.com//user",routes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 server.listen(PORT, () => {
