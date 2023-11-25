@@ -1,16 +1,20 @@
 import Message from '../models/messageModel.js';
 
-export const getDataFromDb =async (req, res) => {
+
+
+  export const getDataFromDb = async (req, res) => {
     try {
       const data = await Message.find().sort({ _id: -1 }).limit(10);
       return res.status(201).json({
         data
     });
     } catch (error) {
-      console.log(error);
-      return res.status(500).json(error);
+      console.error(error); // Log the error for debugging purposes
+      res.status(500).json({ error: 'Internal Server Error' });
     }
-  }
+  };
+  
+
   const generateHTML = (data) => {
     const items = data.map(item => `<li>${item.someProperty}</li>`).join('');
     return `
