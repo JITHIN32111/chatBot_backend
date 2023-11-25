@@ -38,10 +38,8 @@ app.use(urlencoded({ extended: true }));
 dbConnection();
 handleSocketConnection(io)
 const BASE_URL = 'https://chatbotbackend-zsp1.onrender.com';
-app.use(`${BASE_URL}/user`, routes);
-app.use("/https://chatbotbackend-zsp1.onrender.com/user", async (req, res) => {
-                  console.log("::::::::::");
-  // Rest of your route handling logic
+app.use("/user", async (req, res) => {
+  res.send('Hello from /user');
 });
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
