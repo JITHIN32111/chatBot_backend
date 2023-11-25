@@ -11,6 +11,7 @@ import routes from './src/routes/routes.js'
 import handleSocketConnection from './src/utils/socketConnection.js'
 import swaggerDocument from "./src/utils/swagger.json" assert { type: 'json' };
 
+
 const app = express();
 const server = http.createServer(app);
 const PORT=process.env.PORT|| 5000
@@ -36,7 +37,8 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 dbConnection();
 handleSocketConnection(io)
-app.use("/https://chatappweb-cvej.onrender.com//user",routes);
+const BASE_URL = 'https://chatbotbackend-zsp1.onrender.com';
+app.use(`${BASE_URL}/user`, routes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 server.listen(PORT, () => {
