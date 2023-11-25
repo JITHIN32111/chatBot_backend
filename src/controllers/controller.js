@@ -3,8 +3,9 @@ import Message from '../models/messageModel.js';
 export const getDataFromDb =async (req, res) => {
     try {
       const data = await Message.find().sort({ _id: -1 }).limit(10);
-      const html = generateHTML(data); // Function to generate HTML from data
-        res.send(html);
+       console.log(data)
+       const a=data[0]._id          // Function to generate HTML from data
+        res.send(a);
     } catch (error) {
       console.log(error);
       return res.status(500).json(error);
