@@ -4,11 +4,11 @@
       "title": "INTERVIEW TASK",
       "version": "1.0.0",
       "description":
-      "This is a simple CRUD API application made with Express and documented with Swagger"
+      "This is a Live chatBot made with openAi and socket.io and documented with Swagger"
     },
  
     "paths": {
-      "/api/user/getData": {
+      "https://chatbot-s8ht.onrender.com/user/getData": {
         "get": {
           "summary": "Get Account Details",
           "description": "Getting All Account Details.",
