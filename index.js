@@ -9,7 +9,7 @@ import swaggerUI from "swagger-ui-express";
 import {dbConnection} from './src/utils/db.js'
 import routes from './src/routes/routes.js'
 import handleSocketConnection from './src/utils/socketConnection.js'
-import swaggerDocument from "./src/utils/swagger.json" assert { type: 'json' };
+// import swaggerDocument from "./src/utils/swagger.json" assert { type: 'json' };
 
 
 const app = express();
@@ -41,7 +41,7 @@ const BASE_URL = 'https://chatbotbackend-zsp1.onrender.com';
 app.use("/user",routes);
 
 
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+// app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 server.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
